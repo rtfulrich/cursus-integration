@@ -1,0 +1,57 @@
+body {
+	background-color: var(--main-background-color);
+	color: var(--main-text-color);
+	transition: color ease-in-out 300ms;
+	transition: background ease-in-out 300ms;
+	&.dark {
+		--main-background-color: #{$color-black};
+		--main-text-color: #{$color-white};
+	}
+}
+.bg-secondary {
+	background-color: var(--secondary-color);
+	transition: color ease-in-out 300ms;
+	transition: background ease-in-out 300ms;
+	&.blue-twitter {
+		--secondary-color: #{$color-blue-twitter};
+	}
+	&.blue-facebook {
+		--secondary-color: #{$color-blue-facebook};
+	}
+	&.violet {
+		--secondary-color: #{$color-violet};
+	}
+	&.green {
+		--secondary-color: #{$color-green};
+	}
+}
+
+@for $i from 1 through 6 {
+	$dark: 1 !default;
+	$light: 1 !default;
+	@if $i == 1 {
+		$dark: $color-dark-1;
+		$light: $color-light-1;
+	} @else if $i == 2 {
+		$dark: $color-dark-2;
+		$light: $color-light-2;
+	} @else if $i == 3 {
+		$dark: $color-dark-3;
+		$light: $color-light-3;
+	} @else if $i == 4 {
+		$dark: $color-dark-4;
+		$light: $color-light-4;
+	} @else if $i == 5 {
+		$dark: $color-dark-5;
+		$light: $color-light-5;
+	} @else if $i == 6 {
+		$dark: $color-dark-6;
+		$light: $color-light-6;
+	}
+	.text-dark-#{$i} {
+		color: $dark;
+	}
+	.text-light-#{$i} {
+		color: $light;
+	}
+}
