@@ -8,9 +8,6 @@
   --secondary-color: #ee4430;
   --secondary-color-darken: #d92712;
   --secondary-color-lighten: #f26f5f;
-  --transition-duration: 300ms;
-  --transition-property: color;
-  --transition-timing-function: ease;
 }
 
 * {
@@ -22,7 +19,11 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  transition: background var(--transition-timing-function) var(--transition-duration), var(--transition-property) var(--transition-timing-function) var(--transition-duration);
+}
+
+body {
+  color: var(--main-text-color);
+  transition: background ease-in-out 300ms, color ease-in-out 300ms;
 }
 
 button {
@@ -4541,6 +4542,7 @@ body > header .left-header #sidebar-controller {
   cursor: pointer;
   width: 6rem;
   height: 100%;
+  transition: background ease-in-out 300ms;
   background-color: var(--secondary-color);
   margin-right: 2rem;
 }
@@ -4630,10 +4632,10 @@ body > header > .right-header .guest .login {
   position: absolute;
   top: 0.5px;
   left: 2px;
-  --transition-property: transform;
-  --transition-duration: 300ms;
+  transition: transform ease-in-out 300ms, color ease-in-out 300ms;
 }
 .theme-mode-switcher i {
+  transition: color ease-in-out 300ms;
   color: var(--main-text-color);
   font-size: 1.5rem;
   border-radius: 50px;
@@ -4655,6 +4657,7 @@ body.dark-mode .theme-mode-switcher i {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   background-color: var(--secondary-color);
+  transition: background ease-in-out 300ms, color ease-in-out 300ms;
 }
 .btn:hover {
   background-color: var(--secondary-color-darken);

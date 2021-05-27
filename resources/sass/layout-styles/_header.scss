@@ -29,6 +29,7 @@ body > header .left-header {
 		cursor: pointer;
 		width: 6rem;
 		height: 100%;
+		transition: background ease-in-out 300ms;
 		background-color: var(--secondary-color);
 		margin-right: 2rem;
 		&:hover {
@@ -62,6 +63,7 @@ body > header .left-header {
 		}
 		strong {
 			transition: none;
+			// --transition-duration: 1000ms;
 			font-family: Pattaya, SourceSansPro, sans-serif;
 			font-size: 3rem;
 			letter-spacing: 0.3rem;
@@ -112,11 +114,11 @@ body > header > .right-header {
 			position: absolute;
 			top: 0.5px;
 			left: 2px;
-			--transition-property: transform;
-			--transition-duration: 300ms;
+			transition: transform ease-in-out 300ms, color ease-in-out 300ms;
 		}
 	}
 	i {
+		transition: color ease-in-out 300ms;
 		color: var(--main-text-color);
 		font-size: 1.5rem;
 		border-radius: 50px;
