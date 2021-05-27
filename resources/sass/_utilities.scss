@@ -1,0 +1,17 @@
+// Margins and paddings
+@for $i from $margin-padding-debut through $margin-padding-end {
+	.m-#{$i} {
+		margin: #{$i}px;
+	}
+	.p-#{$i} {
+		padding: #{$i}px;
+	}
+	@each $s, $side in "t" "top", "r" "right", "b" "bottom", "l" "left" {
+		.m#{$s}-#{$i} {
+			margin-#{$side}: #{$i}px;
+		}
+		.p#{$s}-#{$i} {
+			padding-#{$side}: #{$i}px;
+		}
+	}
+}

@@ -1,9 +1,14 @@
 /* ------------ COLORS ------------ */
 $color-red: #ee4430;
+// $color-red-darken: darken($color-red, 10);
 $color-blue-twitter: #24a1f2;
+// $color-blue-twitter-darken: darken($color-blue-twitter, 10);
 $color-blue-facebook: #3b5998;
+// $color-blue-facebook-darken: darken($color-blue-facebook, 10);
 $color-violet: #8d6cab;
+// $color-violet-darken: darken($color-violet, 10);
 $color-green: #30bb30;
+// $color-green-darken: darken($color-green, 10);
 
 // Dark colors
 $color-black: black;
@@ -22,3 +27,9 @@ $color-light-4: #afafaf; // 175 175 175
 $color-light-5: #969ba3; // 150 155 163
 $color-light-6: #515151; // 81 81 81
 /* ------------ COLORS ------------ */
+
+/* ------------ UTILITIES ------------ */
+// Margins and paddings
+$margin-padding-debut: 1;
+$margin-padding-end: 100;
+/* ------------ UTILITIES ------------ */

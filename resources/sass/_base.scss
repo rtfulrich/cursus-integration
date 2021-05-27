@@ -1,28 +1,80 @@
 body {
+	font-family: SourceSansPro, sans-serif;
+	@include screen-down-to(320) {
+		display: none;
+	}
+}
+
+body {
 	background-color: var(--main-background-color);
 	color: var(--main-text-color);
-	transition: color ease-in-out 300ms;
-	transition: background ease-in-out 300ms;
-	&.dark {
+	&.dark-mode {
 		--main-background-color: #{$color-black};
 		--main-text-color: #{$color-white};
+	}
+	&.secondary-blue-twitter {
+		--secondary-color: #{$color-blue-twitter};
+		--secondary-color-darken: #{darken($color-blue-twitter, 10)};
+	}
+	&.secondary-blue-facebook {
+		--secondary-color: #{$color-blue-facebook};
+		--secondary-color-darken: #{darken($color-blue-facebook, 10)};
+	}
+	&.secondary-violet {
+		--secondary-color: #{$color-violet};
+		--secondary-color-darken: #{darken($color-violet, 10)};
+	}
+	&.secondary-green {
+		--secondary-color: #{$color-green};
+		--secondary-color-darken: #{darken($color-green, 10)};
+	}
+}
+.color-secondary {
+	color: var(--secondary-color);
+	&.blue-twitter {
+		--secondary-color: #{$color-blue-twitter};
+		--secondary-color-darken: #{darken($color-blue-twitter, 10)};
+	}
+	&.blue-facebook {
+		--secondary-color: #{$color-blue-facebook};
+		--secondary-color-darken: #{darken($color-blue-facebook, 10)};
+	}
+	&.violet {
+		--secondary-color: #{$color-violet};
+		--secondary-color-darken: #{darken($color-violet, 10)};
+	}
+	&.green {
+		--secondary-color: #{$color-green};
+		--secondary-color-darken: #{darken($color-green, 10)};
+	}
+	&.with-hover:hover,
+	&-hover:hover {
+		background-color: var(--secondary-color-darken);
 	}
 }
 .bg-secondary {
 	background-color: var(--secondary-color);
-	transition: color ease-in-out 300ms;
-	transition: background ease-in-out 300ms;
+	color: white;
+	transition: color ease-in-out 300ms, background ease-in-out 300ms;
 	&.blue-twitter {
 		--secondary-color: #{$color-blue-twitter};
+		--secondary-color-darken: #{darken($color-blue-twitter, 10)};
 	}
 	&.blue-facebook {
 		--secondary-color: #{$color-blue-facebook};
+		--secondary-color-darken: #{darken($color-blue-facebook, 10)};
 	}
 	&.violet {
 		--secondary-color: #{$color-violet};
+		--secondary-color-darken: #{darken($color-violet, 10)};
 	}
 	&.green {
 		--secondary-color: #{$color-green};
+		--secondary-color-darken: #{darken($color-green, 10)};
+	}
+	&.with-hover:hover,
+	&-hover:hover {
+		background-color: var(--secondary-color-darken);
 	}
 }
 
@@ -48,10 +100,58 @@ body {
 		$dark: $color-dark-6;
 		$light: $color-light-6;
 	}
+	.bg-dark-#{$i} {
+		background-color: $dark;
+		&.with-transition {
+			transition: background ease-in-out 300ms;
+		}
+		&.darken-hover:hover {
+			background-color: darken($dark, 10);
+		}
+		&.lighten-hover:hover {
+			background-color: lighten($dark, 10);
+		}
+	}
 	.text-dark-#{$i} {
 		color: $dark;
+		&.with-transition {
+			transition: color ease-in-out 300ms;
+		}
+		&.darken-hover:hover {
+			color: darken($dark, 10);
+		}
+		&.lighten-hover:hover {
+			color: lighten($dark, 10);
+		}
+	}
+	.bg-light-#{$i} {
+		background-color: $light;
+		&.with-transition {
+			transition: background ease-in-out 300ms;
+		}
+		&.darken-hover:hover {
+			background-color: darken($light, 10);
+		}
+		&.lighten-hover:hover {
+			background-color: lighten($light, 10);
+		}
 	}
 	.text-light-#{$i} {
 		color: $light;
+		&.with-transition {
+			transition: color ease-in-out 300ms;
+		}
+		&.darken-hover:hover {
+			color: darken($light, 10);
+		}
+		&.lighten-hover:hover {
+			color: lighten($light, 10);
+		}
 	}
 }
+
+// Header
+@import "./layout-styles/header";
+
+// Components
+@import "./components/button";

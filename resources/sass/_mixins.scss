@@ -1,0 +1,33 @@
+/* ---------- RESPONSIVE ---------- */
+@mixin screen-down-to($width) {
+	@media screen and (max-width: #{$width}px) {
+		@content;
+	}
+}
+@mixin screen-between($min, $max) {
+	@if $min < $max {
+		@media screen and (min-width: #{$min}px) and (max-width: #{$max}px) {
+			@content;
+		}
+	} @else if $min > $max {
+		@media screen and (min-width: #{$max}px) and (max-width: #{$min}px) {
+			@content;
+		}
+	} @else {
+		@include screen-down-to($min);
+	}
+}
+/* ---------- RESPONSIVE ---------- */
+
+/* ---------- THEME MODE ---------- */
+// @mixin light-mode {
+// 	body.light-mode {
+// 		@content;
+// 	}
+// }
+@mixin dark-mode {
+	body.dark-mode {
+		@content;
+	}
+}
+/* ---------- THEME MODE ---------- */
