@@ -6,6 +6,22 @@
 	.p-#{$i} {
 		padding: #{$i}px;
 	}
+	.mx-#{$i} {
+		margin-left: #{$i}px;
+		margin-right: #{$i}px;
+	}
+	.px-#{$i} {
+		padding-left: #{$i}px;
+		padding-right: #{$i}px;
+	}
+	.my-#{$i} {
+		margin-top: #{$i}px;
+		margin-bottom: #{$i}px;
+	}
+	.py-#{$i} {
+		padding-top: #{$i}px;
+		padding-bottom: #{$i}px;
+	}
 	@each $s, $side in "t" "top", "r" "right", "b" "bottom", "l" "left" {
 		.m#{$s}-#{$i} {
 			margin-#{$side}: #{$i}px;

@@ -9,10 +9,39 @@
 
 // Dark/Light Mode theme switch
 (function () {
+  var setDataThemes = function setDataThemes() {
+    var isDark = document.body.classList.contains("dark-mode");
+    var elementsWithDataTheme = document.querySelectorAll("[data-theme]");
+    elementsWithDataTheme.forEach(function (item) {
+      item.setAttribute("data-theme", isDark ? "dark" : "light");
+    });
+  };
+
   var themeSwitchers = document.querySelectorAll(".theme-mode-switcher");
   themeSwitchers.forEach(function (item) {
     item.addEventListener("click", function () {
-      return document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("dark-mode");
+      setDataThemes();
+    });
+  });
+  window.addEventListener("DOMContentLoaded", setDataThemes);
+})(); // Header menu
+
+
+(function () {
+  var hideShownMenu = function hideShownMenu() {
+    var menu = document.querySelector(".menu.show");
+    menu === null || menu === void 0 ? void 0 : menu.classList.remove("show");
+  };
+
+  var controllers = document.querySelectorAll(".controller");
+  controllers.forEach(function (controller) {
+    controller.addEventListener("click", function (event) {
+      event.preventDefault();
+      var theElementID = controller.getAttribute("data-controlled");
+      var theElement = document.getElementById(theElementID);
+      var isShown = theElement.classList.contains("show");
+      if (isShown) hideShownMenu();else theElement.classList.add("show");
     });
   });
 })();

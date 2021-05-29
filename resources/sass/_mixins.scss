@@ -20,11 +20,6 @@
 /* ---------- RESPONSIVE ---------- */
 
 /* ---------- THEME MODE ---------- */
-// @mixin light-mode {
-// 	body.light-mode {
-// 		@content;
-// 	}
-// }
 @mixin dark-mode {
 	body.dark-mode {
 		@content;

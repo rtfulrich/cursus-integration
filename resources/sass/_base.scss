@@ -78,6 +78,45 @@ body {
 	}
 }
 
+.theme-mode-switcher {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	.range-slider {
+		width: 4rem;
+		height: 2rem;
+		border-radius: 50px;
+		position: relative;
+		margin: 0 0.5rem;
+		padding: 2px;
+		background-color: rgba($color: $color-light-4, $alpha: 1);
+		.switcher {
+			color: white;
+			position: absolute;
+			top: 0.5px;
+			left: 2px;
+			transition: transform ease-in-out 300ms, color ease-in-out 300ms;
+		}
+	}
+	i {
+		transition: color ease-in-out 300ms;
+		color: var(--main-text-color);
+		font-size: 1.5rem;
+		border-radius: 50px;
+	}
+}
+@include dark-mode {
+	.theme-mode-switcher {
+		.range-slider .switcher {
+			color: var(--secondary-color);
+			transform: translateX(2rem);
+		}
+		i {
+			color: yellow;
+		}
+	}
+}
+
 @for $i from 1 through 6 {
 	$dark: 1 !default;
 	$light: 1 !default;
